@@ -1,26 +1,22 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+# This is a basic workflow to help you get started with Actions
 
-name: Java CI with Maven
+name: CI
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: [push, pull_request, workflow_dispatch]
+
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK 11
-      uses: actions/setup-java@v2
-      with:
-        java-version: '11'
-        distribution: 'adopt'
-        cache: maven
-    - name: Build with Maven
-      run: mvn clean install Ukol7ATests.java testMultiPly
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      - name: Setup JDK with Maven
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      
+      - name: Build with Maven
+        run: mvn clean install
