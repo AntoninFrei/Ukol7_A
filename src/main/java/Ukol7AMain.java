@@ -5,6 +5,8 @@ public class Ukol7AMain {
         System.out.println("xxxxxxxxxxxxx");
         System.out.println("xxxxxxxxx");
         System.out.println("xxxxxxxxx");
+        System.out.println("test3");
+        System.out.println("xxxx");
     }
 
 
